@@ -1,8 +1,3 @@
-.App {
-  width: fit-content;
-  margin: 0 auto;
-}
-
 .card {
   width: 310px;
   height: 627px;
@@ -18,6 +13,12 @@
   background-position: 120% -5%, 200% -40%;
   background-size: 40%, 80%;
   animation: open .5s;
+}
+
+@media screen and (max-width: 340px) {
+  .card {
+    width: 290px;
+  }
 }
 
 @keyframes open {
@@ -199,8 +200,20 @@ button:focus {
   transition: all .1s linear;
 }
 
+@media screen and (max-width: 460px) {
+  .fa-github {
+    color: #3d2f71;
+  }
+}
+
 .fa-github:hover {
   font-size: 42px;
   color: #caff81;
   cursor: pointer;
+}
+
+@media screen and (max-width: 460px) {
+  .fa-github:hover {
+    color: #dca118;
+  }
 }
