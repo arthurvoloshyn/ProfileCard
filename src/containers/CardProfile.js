@@ -1,0 +1,88 @@
+import React, { Component } from "react";
+import { imagePreviewUrl } from "../utils"
+import Edit from "../components/Edit";
+import ImgUpload from "../components/ImgUpload";
+import Field from "../components/Field";
+import Profile from "../components/Profile";
+
+class CardProfile extends Component {
+  state = {
+    file: "",
+    imagePreviewUrl,
+    name: "",
+    status: "",
+    active: "edit",
+  }
+
+  photoUpload = e => {
+    e.preventDefault();
+
+    const reader = new FileReader();
+    const file = e.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file,
+        imagePreviewUrl: reader.result,
+      });
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+  edit = ({ target: { name, value } }) => {
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { active } = this.state;
+
+    let activeP = active === "edit" ? "profile" : "edit";
+
+    this.setState({
+      active: activeP,
+    });
+  };
+
+  render() {
+    const { imagePreviewUrl, name, status, active} = this.state;
+
+    return (
+      <div>
+        {(active === "edit") ? (
+          <Edit onSubmit={this.handleSubmit}>
+            <ImgUpload onChange={this.photoUpload} src={imagePreviewUrl} />
+
+            <Field
+              onChange={this.edit}
+              value={name}
+              type="name"
+              placeholder="Alexa"
+              maxlength={25}
+            />
+
+            <Field
+              onChange={this.edit}
+              value={status}
+              type="status"
+              placeholder="It's a nice day!"
+              maxlength={35}
+            />
+          </Edit>
+        ) : (
+          <Profile
+            onSubmit={this.handleSubmit}
+            src={imagePreviewUrl}
+            name={name}
+            status={status}
+          />
+        )}
+      </div>
+    );
+  }
+}
+
+export default CardProfile;
