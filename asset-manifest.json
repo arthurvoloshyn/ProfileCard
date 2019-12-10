@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ProfileCard/static/css/main.3559f3e8.chunk.css",
+    "main.css": "/ProfileCard/static/css/main.a8002c23.chunk.css",
     "main.js": "/ProfileCard/static/js/main.108b6e7c.chunk.js",
     "main.js.map": "/ProfileCard/static/js/main.108b6e7c.chunk.js.map",
     "runtime-main.js": "/ProfileCard/static/js/runtime-main.8d0dd960.js",
@@ -8,15 +8,15 @@
     "static/js/2.46a66ed7.chunk.js": "/ProfileCard/static/js/2.46a66ed7.chunk.js",
     "static/js/2.46a66ed7.chunk.js.map": "/ProfileCard/static/js/2.46a66ed7.chunk.js.map",
     "index.html": "/ProfileCard/index.html",
-    "precache-manifest.8155e5a773d0933654e5e90417aec156.js": "/ProfileCard/precache-manifest.8155e5a773d0933654e5e90417aec156.js",
+    "precache-manifest.da5a1f2d37f563ed0406acb8b633c354.js": "/ProfileCard/precache-manifest.da5a1f2d37f563ed0406acb8b633c354.js",
     "service-worker.js": "/ProfileCard/service-worker.js",
-    "static/css/main.3559f3e8.chunk.css.map": "/ProfileCard/static/css/main.3559f3e8.chunk.css.map",
+    "static/css/main.a8002c23.chunk.css.map": "/ProfileCard/static/css/main.a8002c23.chunk.css.map",
     "static/js/2.46a66ed7.chunk.js.LICENSE": "/ProfileCard/static/js/2.46a66ed7.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.8d0dd960.js",
     "static/js/2.46a66ed7.chunk.js",
-    "static/css/main.3559f3e8.chunk.css",
+    "static/css/main.a8002c23.chunk.css",
     "static/js/main.108b6e7c.chunk.js"
   ]
 }
