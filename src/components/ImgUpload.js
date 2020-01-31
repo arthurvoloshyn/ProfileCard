@@ -1,23 +1,24 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const ImgUpload = ({ onChange, src }) => (
-  <label htmlFor="photo-upload" className="custom-file-upload">
-    <div className="img-wrap img-upload" >
-      <FontAwesomeIcon icon={faCloudUploadAlt} className="icon" />
-
+  <label htmlFor="photo-upload" className="custom-file-upload fas">
+    <span className="img-wrap img-upload">
       <img htmlFor="photo-upload" src={src} alt="Upload" />
-    </div>
+    </span>
 
-    <input
-      id="photo-upload"
-      type="file"
-      accept="image/*"
-      onChange={onChange}
-      multiple
-    />
+    <input id="photo-upload" type="file" accept="image/*" onChange={onChange} multiple />
   </label>
 );
+
+ImgUpload.propTypes = {
+  src: PropTypes.string,
+  onChange: PropTypes.func
+};
+
+ImgUpload.defaultProps = {
+  src: '../img/profile.jpg',
+  onChange: () => {}
+};
 
 export default ImgUpload;

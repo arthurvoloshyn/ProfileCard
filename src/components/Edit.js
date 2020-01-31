@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Edit = ({ onSubmit, children }) => (
   <div className="card">
@@ -7,9 +8,21 @@ const Edit = ({ onSubmit, children }) => (
 
       {children}
 
-      <button type="submit" className="save">Save </button>
+      <button type="submit" className="save">
+        Save{' '}
+      </button>
     </form>
   </div>
 );
+
+Edit.propTypes = {
+  children: PropTypes.node,
+  onSubmit: PropTypes.func
+};
+
+Edit.defaultProps = {
+  children: null,
+  onSubmit: () => {}
+};
 
 export default Edit;

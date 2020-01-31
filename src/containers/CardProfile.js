@@ -1,18 +1,20 @@
-import React, { Component } from "react";
-import { imagePreviewUrl } from "../utils"
-import Edit from "../components/Edit";
-import ImgUpload from "../components/ImgUpload";
-import Field from "../components/Field";
-import Profile from "../components/Profile";
+import React, { Component } from 'react';
+
+import Edit from '../components/Edit';
+import ImgUpload from '../components/ImgUpload';
+import Field from '../components/Field';
+import Profile from '../components/Profile';
+
+import profile from '../img/profile.jpg';
 
 class CardProfile extends Component {
   state = {
-    file: "",
-    imagePreviewUrl,
-    name: "",
-    status: "",
-    active: "edit",
-  }
+    file: '',
+    imagePreviewUrl: profile,
+    name: '',
+    status: '',
+    active: 'edit'
+  };
 
   photoUpload = e => {
     e.preventDefault();
@@ -23,7 +25,7 @@ class CardProfile extends Component {
     reader.onloadend = () => {
       this.setState({
         file,
-        imagePreviewUrl: reader.result,
+        imagePreviewUrl: reader.result
       });
     };
 
@@ -32,53 +34,33 @@ class CardProfile extends Component {
 
   edit = ({ target: { name, value } }) => {
     this.setState({
-      [name]: value,
+      [name]: value
     });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    const { active } = this.state;
 
-    let activeP = active === "edit" ? "profile" : "edit";
-
-    this.setState({
-      active: activeP,
-    });
+    this.setState(({ active }) => ({
+      active: active === 'edit' ? 'profile' : 'edit'
+    }));
   };
 
   render() {
-    const { imagePreviewUrl, name, status, active} = this.state;
+    const { imagePreviewUrl, name, status, active } = this.state;
 
     return (
       <div>
-        {(active === "edit") ? (
+        {active === 'edit' ? (
           <Edit onSubmit={this.handleSubmit}>
             <ImgUpload onChange={this.photoUpload} src={imagePreviewUrl} />
 
-            <Field
-              onChange={this.edit}
-              value={name}
-              type="name"
-              placeholder="Alexa"
-              maxlength={25}
-            />
+            <Field onChange={this.edit} value={name} type="name" placeholder="Alexa" maxlength={25} />
 
-            <Field
-              onChange={this.edit}
-              value={status}
-              type="status"
-              placeholder="It's a nice day!"
-              maxlength={35}
-            />
+            <Field onChange={this.edit} value={status} type="status" placeholder="It's a nice day!" maxlength={35} />
           </Edit>
         ) : (
-          <Profile
-            onSubmit={this.handleSubmit}
-            src={imagePreviewUrl}
-            name={name}
-            status={status}
-          />
+          <Profile onSubmit={this.handleSubmit} src={imagePreviewUrl} name={name} status={status} />
         )}
       </div>
     );

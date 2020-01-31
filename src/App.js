@@ -1,7 +1,9 @@
-import React from "react";
-import CardProfile from "./containers/CardProfile";
-import Header from "./components/Header";
-import "./App.css";
+import React from 'react';
+
+import CardProfile from './containers/CardProfile';
+import Header from './components/Header';
+
+import './style/App.css';
 
 const App = () => (
   <>

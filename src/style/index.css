@@ -1,0 +1,18 @@
+body {
+  background: #49afa8;
+  background-image: url('../img/leaf.png');
+  background-position: 200% -40%;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 80%;
+  color: #054231;
+  display: flex;
+  font-family: 'Hind Guntur', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  justify-content: center;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
