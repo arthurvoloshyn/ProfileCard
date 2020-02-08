@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ImgUpload = ({ onChange, src }) => (
   <label htmlFor="photo-upload" className="custom-file-upload fas">
     <span className="img-wrap img-upload">
-      <img htmlFor="photo-upload" src={src} alt="Upload" />
+      <img src={src} alt="Upload" />
     </span>
 
     <input id="photo-upload" type="file" accept="image/*" onChange={onChange} multiple />

@@ -22,14 +22,16 @@ class CardProfile extends Component {
     const reader = new FileReader();
     const file = e.target.files[0];
 
-    reader.onloadend = () => {
-      this.setState({
-        file,
-        imagePreviewUrl: reader.result
-      });
-    };
+    if (file) {
+      reader.onloadend = () => {
+        this.setState({
+          file,
+          imagePreviewUrl: reader.result
+        });
+      };
 
-    reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
+    }
   };
 
   edit = ({ target: { name, value } }) => {

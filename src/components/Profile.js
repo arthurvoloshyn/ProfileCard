@@ -7,9 +7,9 @@ const Profile = ({ onSubmit, src, name, status }) => (
       <h1>Profile Card</h1>
 
       <label className="custom-file-upload">
-        <div className="img-wrap">
-          <img htmlFor="photo-upload" src={src} alt="Upload" />
-        </div>
+        <sapn className="img-wrap">
+          <img src={src} alt="Upload" />
+        </sapn>
       </label>
 
       <div className="name">{name}</div>
