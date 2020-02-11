@@ -6,11 +6,11 @@ const Profile = ({ onSubmit, src, name, status }) => (
     <form onSubmit={onSubmit}>
       <h1>Profile Card</h1>
 
-      <label className="custom-file-upload">
+      <div className="custom-file-upload">
         <sapn className="img-wrap">
           <img src={src} alt="Upload" />
         </sapn>
-      </label>
+      </div>
 
       <div className="name">{name}</div>
 
