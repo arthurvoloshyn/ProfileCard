@@ -191,30 +191,3 @@ button:focus {
 .lds-ripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
-
-.fa-github {
-  color: #79f1a4;
-  font-size: 38px;
-  position: absolute;
-  right: 2%;
-  top: 3%;
-  transition: all 0.1s linear;
-}
-
-@media screen and (max-width: 460px) {
-  .fa-github {
-    color: #dfff81;
-  }
-}
-
-.fa-github:hover {
-  color: #caff81;
-  cursor: pointer;
-  font-size: 42px;
-}
-
-@media screen and (max-width: 460px) {
-  .fa-github:hover {
-    color: #fffc81;
-  }
-}
